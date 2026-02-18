@@ -39,3 +39,21 @@ gcc 3230yash.c -o 3230yash
 Inputting invalid path in `watch` function may affect following use of `watch` in workbench2. (works fine on WSL) You may want to exit the YASH and run again.
 
 ## Programming assignement 2 - jacobi_sema
+
+### What's involved
+1. `sem_init(), sem_wait(), sem_post(), sem_destroy()` - working with semaphores
+2. `pthread_create(), pthread_join(), pthread_exit()` - working with threads
+3. `getrusage()` - getting process/thread info
+
+### Compiling
+In Linux (WSL/Docker) run  
+```
+gcc jacobi_sema.c -pthread -lm -O3 -o jacobi_sema
+```
+
+`-O3` optimization is crucial.
+
+### Running
+```
+./jacobi_sema <rows> <cols> <threads>
+```
